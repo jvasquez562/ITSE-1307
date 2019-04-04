@@ -5,53 +5,41 @@
 //4-4-2019
 
 #include <iostream>
-#include <cmath>
-#include <cctype>
-#include <iomanip>
-
 
 using namespace std;
 
+double dblLarger(double x, double y);
+double dblCompareThree(double x, double y, double z);
 
-int abs(int intNumber)
-{
-    if (intNumber < 0)
-        intNumber = -intNumber;
-    
-    return intNumber;
-}
 int main(int argc, const char * argv[]) {
     
-    int num;
-    double FirstNum, SecondNum;
-    char ch = 'T';
+    double one, two;
     
-    cout << fixed << showpoint << setprecision (2)
-    << endl;
+    cout << "Line 2: The dblLarger of 5 and 10 is" << dblLarger(5,10) << endl;
     
-    cout << "Line 12: Is " << ch << "a lowercase letter? " << islower(ch) << endl;
-    
-    cout << "Line 13: Uppercase a is " << static_cast<char> (toupper('a')) << endl;
-    
-    cout << "Line 14: 4.5 to the power 6.0 = " << pow(4.5, 6.0) << endl;
-    
-    cout << "Line 15: Enter two decimal numbers:";
-    cin >> FirstNum >> SecondNum;
+    cout << "line 3: Enter two numbers: ";
+    cin >> one >> two;
     cout << endl;
     
-    cout << "Line 18: " << FirstNum << "to the power of " << SecondNum
-    << " = " << pow(FirstNum, SecondNum) << endl;
+    cout << "Line 6: The larger of " << one << " and " << two << " is " << dblLarger(one, two) << endl;
     
-    cout << "Line 19: 5.0 to the power of 4 = " << pow(5.0,4) << endl;
-    
-    FirstNum = FirstNum + pow(3.5, 7.2);
-    cout << "Line 21: FirstNum = " << FirstNum << endl;
-    
-    num = -32;
-    cout << "Line 23: Absolute value of " << num
-    << " = " << abs(num) << endl;
-    
-    cout << "Line 24: Square root of 28.00 = " << sqrt(28.00) << endl;
-    
+    cout << "Line 7: The largest of 43.48, 34.00, 12.65" <<" and 12.65 is " << dblCompareThree(43.48, 34.00, 12.65) << endl;
+
     return 0;
+}
+
+double dblLarger(double x, double y)
+{
+    double dblMax;
+    
+    if(x >= y)
+        dblMax = x;
+    else
+        dblMax = y;
+    return dblMax;
+}
+
+double dblCompareThree (double x, double y, double z)
+{
+    return dblLarger(x, dblLarger(y,z));
 }
