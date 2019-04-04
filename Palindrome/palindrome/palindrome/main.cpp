@@ -7,39 +7,23 @@
 #include <iostream>
 
 using namespace std;
+int length = str.length();
 
-double dblLarger(double x, double y);
-double dblCompareThree(double x, double y, double z);
+for (int i = 0; i < length / 2; i++)
+    if (str[i] ! = str[length - 1 - i])
+    return false;
+    return true;
 
-int main(int argc, const char * argv[]) {
+bool isPalindome (string str){
+int length = str.length();
     
-    double one, two;
-    
-    cout << "Line 2: The dblLarger of 5 and 10 is" << dblLarger(5,10) << endl;
-    
-    cout << "line 3: Enter two numbers: ";
-    cin >> one >> two;
-    cout << endl;
-    
-    cout << "Line 6: The larger of " << one << " and " << two << " is " << dblLarger(one, two) << endl;
-    
-    cout << "Line 7: The largest of 43.48, 34.00, 12.65" <<" and 12.65 is " << dblCompareThree(43.48, 34.00, 12.65) << endl;
+  for (int i = 0; i < length / 2; i + 1)
+    if (str[i] ! = str[length - 1 - i])
+return true;
+}
 
+
+int main() {
+    
     return 0;
-}
-
-double dblLarger(double x, double y)
-{
-    double dblMax;
-    
-    if(x >= y)
-        dblMax = x;
-    else
-        dblMax = y;
-    return dblMax;
-}
-
-double dblCompareThree (double x, double y, double z)
-{
-    return dblLarger(x, dblLarger(y,z));
 }
