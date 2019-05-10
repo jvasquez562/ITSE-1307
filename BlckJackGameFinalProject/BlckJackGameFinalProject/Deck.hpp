@@ -6,9 +6,35 @@
 //  Copyright © 2019 Jeremy Vasquez. All rights reserved.
 //
 
-#ifndef Deck_hpp
+
 #define Deck_hpp
 
 #include <stdio.h>
 
-#endif /* Deck_hpp */
+#pragma once
+#include <vector>
+#include <algorithm>
+#include "Card.hpp"
+
+class Deck
+{
+public:
+    Deck();
+    Deck(int intpNumberOfDecks);
+    Deck(int intpNumberOfDecks, int intpShufflePoint);
+    ~Deck();
+private:
+    std::vector<Card> vtrDeck;
+    int intShufflePoint = 0;
+    int intCurrentCardIndex = 0;
+    void init(int intpNumberOfDecks);
+public:
+    Card getCard();
+    void shuffle();
+    int size();
+    int getShufflePercent();
+    int getPercentOfDeckDealt();
+    bool shouldShuffle();
+    void setShufflePercent(int intpShufflePercent);
+};
+
