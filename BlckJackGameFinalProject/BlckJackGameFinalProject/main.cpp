@@ -59,7 +59,7 @@ int main()
     
     else if (objPlayer.getHandPointValue() > objDealer.getHandPointValue()) {
     
-        cout << "Player wins" << endl;
+        cout << "The Player wins" << endl;
         
     }
     
@@ -68,5 +68,17 @@ int main()
         cout << "the dealer wins" << endl;
     
     }
+    
+    else if (objPlayer.getHandPointValue() > 21) {
+
+      cout << "The Dealer wins" << endl;
+
+   }
+
+   else if (objDealer.getHandPointValue() > 21) {
+
+      cout << "The Player wins" << endl;
+
+   }
     return 0;
 }
