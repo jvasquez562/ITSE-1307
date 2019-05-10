@@ -6,9 +6,30 @@
 //  Copyright © 2019 Jeremy Vasquez. All rights reserved.
 //
 
-#ifndef Card_hpp
+
 #define Card_hpp
 
-#include <stdio.h>
+#pragma once
+#include <string>
+#include <iostream>
+#include <time.h>
 
-#endif /* Card_hpp */
+class Card
+{
+public:
+    Card();
+    Card(int intpCard);
+    ~Card();
+private:
+    int intCard;
+    int getValue();
+public:
+    void init(int intpCard);
+    void setRandom();
+    int getFaceValue();
+    int getSuiteValue();
+    std::string getSuiteString();
+    std::string getFaceString();
+    std::string toString();
+    
+};
